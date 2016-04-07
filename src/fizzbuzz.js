@@ -15,25 +15,8 @@ FizzBuzz.prototype.say = function(number)
     var threesResult = threes[number % 3]
     
     var numToString = function(number) { return number.toString()}
-    function emptyString(number) {
-        return '' 
-    }
     
-    var array = [
-       fivesResult,
-       threesResult,
-       emptyString,
-    ];
-    
-    var result = "";
-    for (var i = 0; i <array.length; i++)
-    {
-        if (array[i])
-          result+=array[i](number); 
-    }     
-       
-    
-    return result // _.find([fivesResult,threesResult, numToString])(number)
+    return _.find([fivesResult,threesResult, numToString])(number)
     /*function emptyString(number) {
         return ''
     }

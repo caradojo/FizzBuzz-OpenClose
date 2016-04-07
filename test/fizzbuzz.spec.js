@@ -17,7 +17,7 @@ describe("FizzBuzz should", function() {
   
   it("says buzz for multiples of 5", function() {   
         expect(fizzbuzz.say(5)).to.be.equals("buzz");
-        //expect(fizzbuzz.say(10)).to.be.equals("buzz");    
+        expect(fizzbuzz.say(10)).to.be.equals("buzz");    
         //expect(fizzbuzz.say(15)).to.be.equals("fizzbuzz");
   }) 
   
