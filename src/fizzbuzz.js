@@ -3,46 +3,29 @@ function FizzBuzz()
     
 }
 
+
 FizzBuzz.prototype.say = function(number)
 {
-    var threes = {
-        0: function(number) { return "fizz" }
+
+    function isDividableBy(i) {
+        return function(number) {return number % i == 0}
     }
-    var fives = {
-        0: function (number) { return "buzz"}
-    }
-    var fivesResult = fives[number % 5]
-    var threesResult = threes[number % 3]
-    
-    var numToString = function(number) { return number.toString()}
-    function emptyString(number) {
-        return '' 
-    }
-    
-    var array = [
-       fivesResult,
-       threesResult,
-       emptyString,
-    ];
-    
-    var result = "";
-    for (var i = 0; i <array.length; i++)
-    {
-        if (array[i])
-          result+=array[i](number); 
-    }     
-       
-    
-    return result // _.find([fivesResult,threesResult, numToString])(number)
-    /*function emptyString(number) {
-        return ''
-    }
-    var special = [threesResult, fivesResult, emptyString].filter(function(fn) {
-        if (fn)  return fn(number)
-        else return
+
+    var specialExpressionMatchers = [
+        {matches: isDividableBy(3), word: "fizz"},
+        {matches: isDividableBy(5), word: "buzz"},
+        {matches: isDividableBy(7), word: "bang"},
+    ]
+
+    var matchingExpressions = specialExpressionMatchers.filter(function (matcher) {
+        return matcher.matches(number)
     })
-    return _.find([special, numToString])(number)*/
-    //return _.some([threesResult, fivesResult, numToString])(number)
-    
-    
+
+    var specialCases = matchingExpressions.map(function (matchingExpression) {
+        return matchingExpression.word
+    }).join('')
+
+    var firstNonEmptyString = _.find;
+
+    return firstNonEmptyString([specialCases, number.toString()])
 }
