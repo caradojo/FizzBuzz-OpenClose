@@ -17,9 +17,16 @@ describe("FizzBuzz should", function () {
         expect(fizzbuzz.say(10)).to.be.equals("buzz");
     })
 
-    it("says fizzbuzz for multiples of both 3 and 5", function () {
-        expect(fizzbuzz.say(15)).to.be.equals("fizzbuzz");
-        expect(fizzbuzz.say(45)).to.be.equals("fizzbuzz");
+    it("says bang for multiples of 7", function () {
+        expect(fizzbuzz.say(7)).to.be.equals("bang");
+        expect(fizzbuzz.say(14)).to.be.equals("bang");
+    })
+
+    it("says all of fizz buzz bang for combined multiples ", function () {
+        expect(fizzbuzz.say(3 * 5)).to.be.equals("fizzbuzz");
+        expect(fizzbuzz.say(3 * 7)).to.be.equals("fizzbang");
+        expect(fizzbuzz.say(5 * 7)).to.be.equals("buzzbang");
+        expect(fizzbuzz.say(3 * 5 * 7)).to.be.equals("fizzbuzzbang");
     })
 
 
