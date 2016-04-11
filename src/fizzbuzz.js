@@ -17,15 +17,11 @@ FizzBuzz.prototype.say = function(number)
         {matches: isDividableBy(7), word: "bang"},
     ]
 
-    var matchingExpressions = specialExpressionMatchers.filter(function (matcher) {
-        return matcher.matches(number)
-    })
+    var matchingExpressions = specialExpressionMatchers.filter(matcher => matcher.matches(number))
 
-    var specialCases = matchingExpressions.map(function (matchingExpression) {
-        return matchingExpression.word
-    }).join('')
+    var concatenatedSpecialCases = matchingExpressions.map(expression => expression.word).join('')
 
-    var firstNonEmptyString = _.find;
+    var firstNonEmptyStringOf = _.find;
 
-    return firstNonEmptyString([specialCases, number.toString()])
+    return firstNonEmptyStringOf([concatenatedSpecialCases, number.toString()])
 }
