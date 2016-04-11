@@ -1,6 +1,6 @@
 describe("FizzBuzz should", function () {
 
-    var fizzbuzz = new FizzBuzz();
+    var fizzbuzz = new fizzbuzzComposer();
     it('say the number', function () {
         expect(fizzbuzz.say(1)).to.be.equals("1");
         expect(fizzbuzz.say(2)).to.be.equals("2");
